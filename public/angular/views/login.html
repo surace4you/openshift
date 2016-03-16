@@ -1,0 +1,110 @@
+<!-- HEADER -->
+<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/forms/validation/validate.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/login_validation.js"></script>
+	<!-- /theme JS files -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+
+<div class="login-cover" data-ng-init="loginInit()" >
+	
+<!-- <video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
+<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+</video>
+ -->
+<!-- Page container -->
+	<div class="page-container login-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Form with validation -->
+					<form class="form-validate" novalidate>
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								<div class="icon-object" style="padding:0px;padding:0px;border-color:lightgray"><img class="img-circle" data-ng-src="{{profileImg}}" width="100" height="100"></div>
+								<h5 class="content-group"><small class="display-block">Login to your account</small></h5>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-change="checkLoginUser()" ng-model="login.email" type="email" name="email" class="form-control" id="email" required="required" placeholder="Enter a valid email address">
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-model="login.password" type="password" class="form-control" placeholder="Password" name="password" required="required">
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group login-options">
+								<div class="row">
+									<div class="col-sm-6">
+										<label class="checkbox-inline">
+											<input ng-model="login.remember" type="checkbox" ng-change="checkcheck()" class="styled" checked="checked">
+											Remember
+										</label>
+									</div>
+
+									<div class="col-sm-6 text-right">
+										<a href="#resetpassword">Forgot password?</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<button ng-click="loginform()" class="btn bg-blue btn-block">Login <i class="icon-arrow-right14 position-right"></i></button>
+							</div>
+
+							<div class="content-divider text-muted form-group"><span>or sign in with</span></div>
+							<ul class="list-inline form-group list-inline-condensed text-center">
+								<li><a href="#" ><img src="assets/images/googleSign.png" alt="googlesignin"></a></li>
+								<!-- class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded" -->
+							</ul>
+
+							<div class="content-divider text-muted form-group"><span>Don't have an account?</span></div>
+							<a ng-href="#register" class="btn bg-blue btn-block">Sign up</a>
+							<span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+						</div>
+					</form>
+					<!-- /form with validation -->
+
+
+					<!-- Footer -->
+					<div class="footer text-white">
+						&copy; 2016. <a href="#" class="text-white">Learning Management System</a><a href="#" class="text-white" target="_blank"></a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</div>

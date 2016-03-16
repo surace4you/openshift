@@ -1,0 +1,150 @@
+
+<!-- HEADER -->
+<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/forms/validation/validate.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switch.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_validation.js"></script>
+	<!-- /theme JS files -->
+
+	<script type="text/javascript" src="angular/services/authService.js"></script>
+	<script type="text/javascript" src="assets/js/pages/login_validation.js"></script>
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/autosize.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/formatter.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/typeahead/handlebars.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/passy.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_controls_extended.js"></script>
+	<!-- /theme JS files -->
+
+<script type="text/javascript" src="assets/js/plugins/uploaders/fileinput.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/uploader_bootstrap.js"></script>
+<script type="text/javascript" src="bower_components/ng-image-compress/ng-image-compress.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+
+
+
+
+
+<div class="login-cover">
+	<!-- Page container -->
+	<div class="page-container login-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Advanced login -->
+					<form class="form-validate" novalidate>
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								
+						<div class="icon-object border-success text-success" style="padding:0px;"><img class="img-circle" data-ng-src="{{uploadImg}}" width="100" height="100"></div>
+														<span class="btn btn-default btn-file" style=" position: absolute;right: 85px;top: 110px;z-index: 100;color:green;">
+						   <i class="icon-pencil"></i><input onchange="angular.element(this).scope().imageUpload(this)" file-model="uploadImg" id="inputImage" type="file" accept="image/*" image="image1" resize-max-height="1000" resize-max-width="1000" resize-quality="0.7" resize-type="image/jpg">
+						</span>
+
+						 
+
+								<!-- <h5 class="content-group">Create account <small class="display-block">All fields are required</small></h5> -->
+							</div>
+
+							<div class="content-divider text-muted form-group"><span>Create Account</span></div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-model="regs.firstname" type="text" name="firstname" class="form-control" placeholder="First Name" required="required">
+								<div class="form-control-feedback">
+									<i class="icon-user-check text-muted"></i>
+								</div>
+								<!-- <span class="help-block text-danger"><i class="icon-cancel-circle2 position-left"></i> This username is already taken</span> -->
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-model="regs.middlename" type="text" name="middlename" class="form-control" placeholder="Middle Name" required="required">
+								<div class="form-control-feedback">
+									<i class="icon-user-lock text-muted"></i>
+								</div>
+							</div>
+							
+							<div class="form-group has-feedback has-feedback-left">
+								<input type="text" ng-model="regs.lastname" name="lastname" class="form-control" placeholder="Last Name" required="required">
+								<div class="form-control-feedback">
+									<i class="icon-user-lock text-muted"></i>
+								</div>
+							</div>
+
+							
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-change="checkExistUser()" ng-model="regs.email" type="email" name="email" class="form-control" id="email" required="required" placeholder="Enter a valid email address">
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+								<span ng-if="regs.email" class="help-block" style="color:{{getCheckUser.vcolor}};font-weight:bold;float:right">{{getCheckUser.msg}}</span>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<input ng-model="regs.mobilenumber" type="text" class="form-control" data-mask="(999) 999-9999" placeholder="Enter your phone #" required="required">			                        	
+			                        	<span class="help-block">(999) 999-9999</span>
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+							</div>
+
+							
+							<button ng-click="registerform()" ng-disabled="getCheckUser.CStatus" class="btn bg-teal btn-block btn-lg">Register <i class="icon-circle-right2 position-right"></i></button>
+							</div>
+
+							
+						</div>
+					</form>
+					<!-- /advanced login -->
+
+
+					<!-- Footer -->
+					<div class="footer text-white">
+						&copy; 2016. <a href="#" class="text-white">Learning Management System</a><a href="#" class="text-white" target="_blank"></a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+</div>
